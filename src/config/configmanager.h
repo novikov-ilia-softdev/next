@@ -11,6 +11,10 @@ public:
 	ConfigManager( OutputManagerPtr outputManagerPtr);
 	~ConfigManager();
 
+	const std::vector<int> & getUsedIndexes() const;
+	int getMinIndex() const;
+	int getMaxIndex() const;
+
 private:
 	OutputManagerPtr outputManagerPtr_;
 	static const std::string CONFIG_PATH;

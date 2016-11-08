@@ -31,3 +31,18 @@ void ConfigManager::readConfig_()
 		usedIndexes_.push_back( boost::lexical_cast<int>( v.second.data()));
 	}
 }
+
+const std::vector<int> & ConfigManager::getUsedIndexes() const
+{
+	return usedIndexes_;
+}
+
+int ConfigManager::getMinIndex() const
+{
+	return minIndex_;
+}
+
+int ConfigManager::getMaxIndex() const
+{
+	return maxIndex_;
+}

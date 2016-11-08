@@ -15,6 +15,7 @@ public:
 
 private:
 	OutputManagerPtr outputManagerPtr_;
+	bool isRandIndexUsed_( int randIndex, const std::vector<int>& usedIndexes);
 };
 
 typedef boost::shared_ptr< RandomManager> RandomManagerPtr;

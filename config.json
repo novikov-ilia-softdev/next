@@ -1,5 +1,6 @@
 {
-	"minIndex": 0,
-	"maxIndex": 10,
-	"usedIndex": [3, 5, 7]
+    "minIndex": "1",
+    "maxIndex": "5",
+    "usedIndex": [
+    ]
 }

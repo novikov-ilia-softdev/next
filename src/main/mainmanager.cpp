@@ -20,5 +20,5 @@ void MainManager::run()
 	int maxIndex = configManagerPtr_->getMaxIndex();
 	int randomIndex = randomManagerPtr_->getRandom( minIndex, maxIndex, usedIndexes);
 	std::cout << "randomIndex: " << randomIndex << std::endl;
-	//_configManager.saveUsedIndex( randomIndex);
+	configManagerPtr_->saveUsedIndex( randomIndex);
 }

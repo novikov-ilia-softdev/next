@@ -14,6 +14,7 @@ public:
 	const std::vector<int> & getUsedIndexes() const;
 	int getMinIndex() const;
 	int getMaxIndex() const;
+	void saveUsedIndex( int index);
 
 private:
 	OutputManagerPtr outputManagerPtr_;
@@ -22,6 +23,7 @@ private:
 	int minIndex_;
 	int maxIndex_;
 	std::vector<int> usedIndexes_;
+	void writeConfig_();
 };
 
 typedef boost::shared_ptr< ConfigManager> ConfigManagerPtr;

@@ -10,6 +10,7 @@ public:
 	~OutputManager();
 
 	void print( const std::string& msg) const;
+	void print( const std::string& msg, int i) const;
 
 private:
 };

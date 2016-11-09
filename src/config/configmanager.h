@@ -7,22 +7,23 @@
 #include "../output/outputmanager.h"
 
 class ConfigManager{
+	static const std::string CONFIG_PATH;
+
 public:
 	ConfigManager( OutputManagerPtr outputManagerPtr);
 	~ConfigManager();
 
-	const std::vector<int> & getUsedIndexes() const;
-	int getMinIndex() const;
+	bool isUsedIndex( int index) const;
+	bool isRangeFull() const;
 	int getMaxIndex() const;
 	void saveUsedIndex( int index);
 
 private:
 	OutputManagerPtr outputManagerPtr_;
-	static const std::string CONFIG_PATH;
-	void readConfig_();
-	int minIndex_;
 	int maxIndex_;
 	std::vector<int> usedIndexes_;
+
+	void readConfig_();
 	void writeConfig_();
 };
 

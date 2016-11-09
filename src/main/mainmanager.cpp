@@ -1,6 +1,4 @@
 #include "mainmanager.h"
-#include <iostream>
-#include <vector>
 
 MainManager::MainManager(): outputManagerPtr_( OutputManagerPtr( new OutputManager))
 {
@@ -15,11 +13,24 @@ MainManager::~MainManager()
 
 void MainManager::run()
 {
-	std::vector<int> usedIndexes = configManagerPtr_->getUsedIndexes();
-	int minIndex = configManagerPtr_->getMinIndex();
+	if( configManagerPtr_->isRangeFull())
+	{
+		outputManagerPtr_->print( "range is full!");
+		return;
+	}
+
 	int maxIndex = configManagerPtr_->getMaxIndex();
-	int randomIndex = randomManagerPtr_->getRandom( minIndex, maxIndex, usedIndexes);
+	int randomIndex;
+
+	while( 1)
+	{
+		randomIndex = randomManagerPtr_->getRandom( maxIndex);
+		if( configManagerPtr_->isUsedIndex( randomIndex))
+			continue;
+
+		break;
+	}
+
 	outputManagerPtr_->print( "randomIndex: ", randomIndex);
-	if( randomIndex != -1)
-		configManagerPtr_->saveUsedIndex( randomIndex);
+	configManagerPtr_->saveUsedIndex( randomIndex);
 }

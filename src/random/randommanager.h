@@ -2,7 +2,6 @@
 #define RANDOMMANAGER_H
 
 #include <boost/shared_ptr.hpp>
-#include <vector>
 
 #include "../output/outputmanager.h"
 
@@ -11,11 +10,10 @@ public:
 	RandomManager( OutputManagerPtr outputManagerPtr);
 	~RandomManager();
 
-	int getRandom( int minIndex, int maxIndex, const std::vector<int>& usedIndexes);
+	int getRandom( int maxIndex) const;
 
 private:
 	OutputManagerPtr outputManagerPtr_;
-	bool isRandIndexUsed_( int randIndex, const std::vector<int>& usedIndexes);
 };
 
 typedef boost::shared_ptr< RandomManager> RandomManagerPtr;

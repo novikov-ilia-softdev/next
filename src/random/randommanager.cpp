@@ -2,9 +2,9 @@
 #include <cstdlib>
 #include <iostream>
 
-RandomManager::RandomManager( OutputManagerPtr outputManagerPtr): outputManagerPtr_( outputManagerPtr)
+RandomManager::RandomManager( OutputManagerPtr outputManagerPtr)
 {
-	srand( time(NULL));
+	randomManagerImplPtr_ = RandomManagerImplPtr( new RandomManagerImpl( outputManagerPtr));
 }
 
 RandomManager::~RandomManager()
@@ -14,5 +14,5 @@ RandomManager::~RandomManager()
 
 int RandomManager::getRandom( int maxIndex) const
 {
-	return ((rand() % maxIndex) + 1);
+	return randomManagerImplPtr_->getRandom( maxIndex);
 }

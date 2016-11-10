@@ -1,10 +1,8 @@
 #include "outputmanager.h"
 
-#include <iostream>
-
 OutputManager::OutputManager()
 {
-
+	outputManagerImplPtr_ = OutputManagerImplPtr( new OutputManagerImpl());
 }
 
 OutputManager::~OutputManager()
@@ -14,10 +12,10 @@ OutputManager::~OutputManager()
 
 void OutputManager::print( const std::string& msg) const
 {
-	std::cout << msg << std::endl;
+	outputManagerImplPtr_->print( msg);
 }
 
 void OutputManager::print( const std::string& msg, int i) const
 {
-	std::cout << msg << i << std::endl;
+	outputManagerImplPtr_->print( msg, i);
 }

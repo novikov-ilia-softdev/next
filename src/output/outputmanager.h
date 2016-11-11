@@ -3,8 +3,8 @@
 
 #include <boost/shared_ptr.hpp>
 #include <string>
-#include "outputmanagerimpl.h"
 #include "ioutputmanager.h"
+#include "ioutputmanagerimpl.h"
 
 class OutputManager: public IOutputManager{
 public:
@@ -15,7 +15,7 @@ public:
 	void print( const std::string& msg, int i) const;
 
 private:
-	OutputManagerImplPtr outputManagerImplPtr_;
+	IOutputManagerImplPtr outputManagerImplPtr_;
 };
 
 typedef boost::shared_ptr< OutputManager> OutputManagerPtr;

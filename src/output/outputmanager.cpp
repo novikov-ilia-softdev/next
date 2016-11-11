@@ -1,8 +1,9 @@
 #include "outputmanager.h"
+#include "outputmanagerimpl.h"
 
 OutputManager::OutputManager()
 {
-	outputManagerImplPtr_ = OutputManagerImplPtr( new OutputManagerImpl());
+	outputManagerImplPtr_ = IOutputManagerImplPtr( new OutputManagerImpl());
 }
 
 OutputManager::~OutputManager()

@@ -4,7 +4,7 @@
 class IOutputManager{
 public:
 	IOutputManager() {};
-	~IOutputManager() {};
+	virtual ~IOutputManager() {};
 
 	virtual void print( const std::string& msg) const = 0;
 	virtual void print( const std::string& msg, int i) const = 0;

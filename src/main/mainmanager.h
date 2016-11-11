@@ -4,8 +4,9 @@
 #include <boost/shared_ptr.hpp>
 
 #include "mainmanagerimpl.h"
+#include "imainmanager.h"
 
-class MainManager{
+class MainManager: public IMainManager{
 public:
 	MainManager();
 	~MainManager();

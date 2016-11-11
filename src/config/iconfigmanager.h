@@ -7,7 +7,7 @@ class IConfigManager{
 
 public:
 	IConfigManager() {};
-	~IConfigManager() {};
+	virtual ~IConfigManager() {};
 
 	virtual bool isUsedIndex( int index) const = 0;
 	virtual bool isRangeFull() const = 0;

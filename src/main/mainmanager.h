@@ -3,9 +3,7 @@
 
 #include <boost/shared_ptr.hpp>
 
-#include "../config/configmanager.h"
-#include "../output/outputmanager.h"
-#include "../random/randommanager.h"
+#include "mainmanagerimpl.h"
 
 class MainManager{
 public:
@@ -14,9 +12,7 @@ public:
 	void run();
 
 private:
-	OutputManagerPtr outputManagerPtr_;
-	ConfigManagerPtr configManagerPtr_;
-	RandomManagerPtr randomManagerPtr_;
+	MainManagerImplPtr mainManagerImplPtr_;
 };
 
 typedef boost::shared_ptr< MainManager> MainManagerPtr;

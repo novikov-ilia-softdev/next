@@ -1,6 +1,4 @@
 #include "randommanager.h"
-#include <cstdlib>
-#include <iostream>
 
 RandomManager::RandomManager( IOutputManagerPtr outputManagerPtr)
 {

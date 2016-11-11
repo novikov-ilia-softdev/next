@@ -3,8 +3,6 @@
 
 #include <boost/shared_ptr.hpp>
 
-#include "mainmanagerimpl.h"
-
 class IMainManager{
 public:
 	IMainManager() {};

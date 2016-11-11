@@ -3,7 +3,6 @@
 
 #include <boost/shared_ptr.hpp>
 
-#include "../output/outputmanager.h"
 #include "./randommanagerimpl.h"
 
 class IRandomManager{

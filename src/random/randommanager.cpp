@@ -2,7 +2,7 @@
 #include <cstdlib>
 #include <iostream>
 
-RandomManager::RandomManager( OutputManagerPtr outputManagerPtr)
+RandomManager::RandomManager( IOutputManagerPtr outputManagerPtr)
 {
 	randomManagerImplPtr_ = RandomManagerImplPtr( new RandomManagerImpl( outputManagerPtr));
 }

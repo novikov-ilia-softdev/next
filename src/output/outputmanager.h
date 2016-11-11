@@ -4,8 +4,9 @@
 #include <boost/shared_ptr.hpp>
 #include <string>
 #include "outputmanagerimpl.h"
+#include "ioutputmanager.h"
 
-class OutputManager{
+class OutputManager: public IOutputManager{
 public:
 	OutputManager();
 	~OutputManager();

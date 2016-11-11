@@ -3,17 +3,17 @@
 
 #include <boost/shared_ptr.hpp>
 
-#include "../output/outputmanager.h"
+#include "../output/ioutputmanager.h"
 
 class RandomManagerImpl{
 public:
-	RandomManagerImpl( OutputManagerPtr outputManagerPtr);
+	RandomManagerImpl( IOutputManagerPtr outputManagerPtr);
 	~RandomManagerImpl();
 
 	int getRandom( int maxIndex) const;
 
 private:
-	OutputManagerPtr outputManagerPtr_;
+	IOutputManagerPtr outputManagerPtr_;
 };
 
 typedef boost::shared_ptr< RandomManagerImpl> RandomManagerImplPtr;

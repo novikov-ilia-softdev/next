@@ -4,13 +4,13 @@
 #include <boost/shared_ptr.hpp>
 #include <vector>
 
-#include "../output/outputmanager.h"
+#include "../output/ioutputmanager.h"
 
 class ConfigManagerImpl{
 	static const std::string CONFIG_PATH;
 
 public:
-	ConfigManagerImpl( OutputManagerPtr outputManagerPtr);
+	ConfigManagerImpl( IOutputManagerPtr outputManagerPtr);
 	~ConfigManagerImpl();
 
 	bool isUsedIndex( int index) const;
@@ -19,7 +19,7 @@ public:
 	void saveUsedIndex( int index);
 
 private:
-	OutputManagerPtr outputManagerPtr_;
+	IOutputManagerPtr outputManagerPtr_;
 	int maxIndex_;
 	std::vector<int> usedIndexes_;
 

@@ -1,8 +1,9 @@
 #include "mainmanagerimpl.h"
+#include "../output/outputmanager.h"
 #include "../config/configmanager.h"
 #include "../random/randommanager.h"
 
-MainManagerImpl::MainManagerImpl(): outputManagerPtr_( OutputManagerPtr( new OutputManager))
+MainManagerImpl::MainManagerImpl(): outputManagerPtr_( IOutputManagerPtr( new OutputManager))
 {
 	configManagerPtr_ = IConfigManagerPtr( new ConfigManager( outputManagerPtr_));
 	randomManagerPtr_ = IRandomManagerPtr( new RandomManager( outputManagerPtr_));

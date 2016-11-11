@@ -1,6 +1,6 @@
 #include "configmanager.h"
 
-ConfigManager::ConfigManager( OutputManagerPtr outputManagerPtr)
+ConfigManager::ConfigManager( IOutputManagerPtr outputManagerPtr)
 {
 	configManagerImplPtr_ = ConfigManagerImplPtr( new ConfigManagerImpl( outputManagerPtr));
 }

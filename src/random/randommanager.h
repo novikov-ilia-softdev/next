@@ -3,13 +3,13 @@
 
 #include <boost/shared_ptr.hpp>
 
-#include "../output/outputmanager.h"
+#include "../output/ioutputmanager.h"
 #include "./randommanagerimpl.h"
 #include "irandommanager.h"
 
 class RandomManager: public IRandomManager{
 public:
-	RandomManager( OutputManagerPtr outputManagerPtr);
+	RandomManager( IOutputManagerPtr outputManagerPtr);
 	~RandomManager();
 
 	int getRandom( int maxIndex) const;

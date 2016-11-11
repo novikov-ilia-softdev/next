@@ -3,14 +3,14 @@
 
 #include <boost/shared_ptr.hpp>
 
-#include "../output/outputmanager.h"
+#include "../output/ioutputmanager.h"
 #include "configmanagerimpl.h"
 #include "iconfigmanager.h"
 
 class ConfigManager: public IConfigManager{
 
 public:
-	ConfigManager( OutputManagerPtr outputManagerPtr);
+	ConfigManager( IOutputManagerPtr outputManagerPtr);
 	~ConfigManager();
 
 	bool isUsedIndex( int index) const;

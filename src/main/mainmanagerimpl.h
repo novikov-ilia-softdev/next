@@ -4,7 +4,7 @@
 #include <boost/shared_ptr.hpp>
 
 #include "../config/iconfigmanager.h"
-#include "../output/outputmanager.h"
+#include "../output/ioutputmanager.h"
 #include "../random/irandommanager.h"
 
 class MainManagerImpl{
@@ -14,7 +14,7 @@ public:
 	void run();
 
 private:
-	OutputManagerPtr outputManagerPtr_;
+	IOutputManagerPtr outputManagerPtr_;
 	IConfigManagerPtr configManagerPtr_;
 	IRandomManagerPtr randomManagerPtr_;
 };

@@ -8,7 +8,7 @@
 
 const std::string ConfigManagerImpl::CONFIG_PATH = "./config.json";
 
-ConfigManagerImpl::ConfigManagerImpl( OutputManagerPtr outputManagerPtr) : outputManagerPtr_( outputManagerPtr)
+ConfigManagerImpl::ConfigManagerImpl( IOutputManagerPtr outputManagerPtr) : outputManagerPtr_( outputManagerPtr)
 {
 	readConfig_();
 }

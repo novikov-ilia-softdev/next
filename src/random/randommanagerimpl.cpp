@@ -1,7 +1,7 @@
 #include "./randommanagerimpl.h"
 #include <cstdlib>
 
-RandomManagerImpl::RandomManagerImpl( OutputManagerPtr outputManagerPtr): outputManagerPtr_( outputManagerPtr)
+RandomManagerImpl::RandomManagerImpl( IOutputManagerPtr outputManagerPtr): outputManagerPtr_( outputManagerPtr)
 {
 	srand( time(NULL));
 }

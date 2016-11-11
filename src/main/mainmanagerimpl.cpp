@@ -3,7 +3,7 @@
 MainManagerImpl::MainManagerImpl(): outputManagerPtr_( OutputManagerPtr( new OutputManager))
 {
 	configManagerPtr_ = ConfigManagerPtr( new ConfigManager( outputManagerPtr_));
-	randomManagerPtr_ = RandomManagerPtr( new RandomManager( outputManagerPtr_));
+	randomManagerPtr_ = IRandomManagerPtr( new RandomManager( outputManagerPtr_));
 }
 
 MainManagerImpl::~MainManagerImpl()

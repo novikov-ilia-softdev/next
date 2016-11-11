@@ -5,8 +5,9 @@
 
 #include "../output/outputmanager.h"
 #include "./randommanagerimpl.h"
+#include "irandommanager.h"
 
-class RandomManager{
+class RandomManager: public IRandomManager{
 public:
 	RandomManager( OutputManagerPtr outputManagerPtr);
 	~RandomManager();

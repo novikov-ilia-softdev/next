@@ -16,7 +16,7 @@ public:
 private:
 	OutputManagerPtr outputManagerPtr_;
 	ConfigManagerPtr configManagerPtr_;
-	RandomManagerPtr randomManagerPtr_;
+	IRandomManagerPtr randomManagerPtr_;
 };
 
 typedef boost::shared_ptr< MainManagerImpl> MainManagerImplPtr;

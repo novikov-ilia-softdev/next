@@ -5,8 +5,9 @@
 
 #include "../output/outputmanager.h"
 #include "configmanagerimpl.h"
+#include "iconfigmanager.h"
 
-class ConfigManager{
+class ConfigManager: public IConfigManager{
 
 public:
 	ConfigManager( OutputManagerPtr outputManagerPtr);

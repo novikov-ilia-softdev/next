@@ -1,16 +1,8 @@
 #include "configmanager.h"
 
-#include <boost/property_tree/json_parser.hpp>
-#include <boost/lexical_cast.hpp>
-#include <boost/property_tree/ptree.hpp>
-#include <boost/foreach.hpp>
-#include <fstream>
-
-const std::string ConfigManager::CONFIG_PATH = "./config.json";
-
-ConfigManager::ConfigManager( OutputManagerPtr outputManagerPtr) : outputManagerPtr_( outputManagerPtr)
+ConfigManager::ConfigManager( OutputManagerPtr outputManagerPtr)
 {
-	readConfig_();
+	configManagerImplPtr_ = ConfigManagerImplPtr( new ConfigManagerImpl( outputManagerPtr));
 }
 
 ConfigManager::~ConfigManager()
@@ -18,65 +10,22 @@ ConfigManager::~ConfigManager()
 
 }
 
-void ConfigManager::readConfig_()
-{
-	std::ifstream jsonFile( CONFIG_PATH.c_str());
-	boost::property_tree::ptree pt;
-	read_json( jsonFile, pt);
-	maxIndex_ = boost::lexical_cast<int>( pt.get_child( "maxIndex").data());
-	BOOST_FOREACH( boost::property_tree::ptree::value_type &v, pt.get_child( "usedIndex"))
-	{
-		usedIndexes_.push_back( boost::lexical_cast<int>( v.second.data()));
-	}
-	jsonFile.close();
-}
-
 int ConfigManager::getMaxIndex() const
 {
-	return maxIndex_;
+	return configManagerImplPtr_->getMaxIndex();
 }
 
 void ConfigManager::saveUsedIndex( int index)
 {
-	usedIndexes_.push_back( index);
-	writeConfig_();
-}
-
-void ConfigManager::writeConfig_()
-{
-
-	std::ofstream jsonFile( CONFIG_PATH.c_str());
-	boost::property_tree::ptree pt;
-	pt.put( "maxIndex", maxIndex_);
-	boost::property_tree::ptree usedIndexNodes;
-	for( int i = 0; i < usedIndexes_.size(); i++)
-	{
-		boost::property_tree::ptree usedIndexNode;
-		usedIndexNode.put( "", usedIndexes_[ i]);
-		usedIndexNodes.push_back(std::make_pair("", usedIndexNode));
-	}
-
-	pt.add_child( "usedIndex", usedIndexNodes);
-	write_json( jsonFile, pt);
-	jsonFile.close();
+	configManagerImplPtr_->saveUsedIndex( index);
 }
 
 bool ConfigManager::isRangeFull() const
 {
-	return ( usedIndexes_.size() == maxIndex_);
+	return configManagerImplPtr_->isRangeFull();
 }
 
 bool ConfigManager::isUsedIndex( int index) const
 {
-	for( int i = 0; i < usedIndexes_.size(); i++)
-	{
-		if( index == usedIndexes_[ i])
-			return true;
-	}
-
-	return false;
+	return configManagerImplPtr_->isUsedIndex( index);
 }
-
-
-
-

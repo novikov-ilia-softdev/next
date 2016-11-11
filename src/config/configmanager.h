@@ -2,12 +2,11 @@
 #define CONFIGMANAGER_H
 
 #include <boost/shared_ptr.hpp>
-#include <vector>
 
 #include "../output/outputmanager.h"
+#include "configmanagerimpl.h"
 
 class ConfigManager{
-	static const std::string CONFIG_PATH;
 
 public:
 	ConfigManager( OutputManagerPtr outputManagerPtr);
@@ -19,12 +18,7 @@ public:
 	void saveUsedIndex( int index);
 
 private:
-	OutputManagerPtr outputManagerPtr_;
-	int maxIndex_;
-	std::vector<int> usedIndexes_;
-
-	void readConfig_();
-	void writeConfig_();
+	ConfigManagerImplPtr configManagerImplPtr_;
 };
 
 typedef boost::shared_ptr< ConfigManager> ConfigManagerPtr;

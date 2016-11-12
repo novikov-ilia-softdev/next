@@ -4,7 +4,7 @@
 #include <boost/shared_ptr.hpp>
 
 #include "../output/ioutputmanager.h"
-#include "./randommanagerimpl.h"
+#include "./irandommanagerimpl.h"
 #include "irandommanager.h"
 
 class RandomManager: public IRandomManager{
@@ -15,7 +15,7 @@ public:
 	int getRandom( int maxIndex) const;
 
 private:
-	RandomManagerImplPtr randomManagerImplPtr_;
+	IRandomManagerImplPtr randomManagerImplPtr_;
 };
 
 typedef boost::shared_ptr< RandomManager> RandomManagerPtr;

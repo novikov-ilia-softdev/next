@@ -2,7 +2,7 @@
 
 RandomManager::RandomManager( IOutputManagerPtr outputManagerPtr)
 {
-	randomManagerImplPtr_ = RandomManagerImplPtr( new RandomManagerImpl( outputManagerPtr));
+	randomManagerImplPtr_ = IRandomManagerImplPtr( new RandomManagerImpl( outputManagerPtr));
 }
 
 RandomManager::~RandomManager()

@@ -4,8 +4,9 @@
 #include <boost/shared_ptr.hpp>
 
 #include "../output/ioutputmanager.h"
+#include "irandommanagerimpl.h"
 
-class RandomManagerImpl{
+class RandomManagerImpl: public IRandomManagerImpl{
 public:
 	RandomManagerImpl( IOutputManagerPtr outputManagerPtr);
 	~RandomManagerImpl();

@@ -1,8 +1,9 @@
 #include "configmanager.h"
+#include "configmanagerimpl.h"
 
 ConfigManager::ConfigManager( IOutputManagerPtr outputManagerPtr)
 {
-	configManagerImplPtr_ = ConfigManagerImplPtr( new ConfigManagerImpl( outputManagerPtr));
+	configManagerImplPtr_ = IConfigManagerImplPtr( new ConfigManagerImpl( outputManagerPtr));
 }
 
 ConfigManager::~ConfigManager()

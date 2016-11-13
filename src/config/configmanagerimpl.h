@@ -5,8 +5,9 @@
 #include <vector>
 
 #include "../output/ioutputmanager.h"
+#include "iconfigmanagerimpl.h"
 
-class ConfigManagerImpl{
+class ConfigManagerImpl: public IConfigManagerImpl{
 	static const std::string CONFIG_PATH;
 
 public:

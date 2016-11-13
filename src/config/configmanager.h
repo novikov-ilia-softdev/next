@@ -4,7 +4,7 @@
 #include <boost/shared_ptr.hpp>
 
 #include "../output/ioutputmanager.h"
-#include "configmanagerimpl.h"
+#include "iconfigmanagerimpl.h"
 #include "iconfigmanager.h"
 
 class ConfigManager: public IConfigManager{
@@ -19,7 +19,7 @@ public:
 	void saveUsedIndex( int index);
 
 private:
-	ConfigManagerImplPtr configManagerImplPtr_;
+	IConfigManagerImplPtr configManagerImplPtr_;
 };
 
 typedef boost::shared_ptr< ConfigManager> ConfigManagerPtr;

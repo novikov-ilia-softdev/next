@@ -3,7 +3,7 @@
 
 #include <boost/shared_ptr.hpp>
 
-#include "mainmanagerimpl.h"
+#include "imainmanagerimpl.h"
 #include "imainmanager.h"
 
 class MainManager: public IMainManager{
@@ -13,7 +13,7 @@ public:
 	void run();
 
 private:
-	MainManagerImplPtr mainManagerImplPtr_;
+	IMainManagerImplPtr mainManagerImplPtr_;
 };
 
 typedef boost::shared_ptr< MainManager> MainManagerPtr;

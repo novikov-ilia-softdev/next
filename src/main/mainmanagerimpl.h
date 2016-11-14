@@ -6,8 +6,9 @@
 #include "../config/iconfigmanager.h"
 #include "../output/ioutputmanager.h"
 #include "../random/irandommanager.h"
+#include "imainmanagerimpl.h"
 
-class MainManagerImpl{
+class MainManagerImpl: public IMainManagerImpl{
 public:
 	MainManagerImpl();
 	~MainManagerImpl();

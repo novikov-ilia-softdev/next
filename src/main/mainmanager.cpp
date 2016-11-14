@@ -1,8 +1,9 @@
 #include "mainmanager.h"
+#include "mainmanagerimpl.h"
 
 MainManager::MainManager()
 {
-	mainManagerImplPtr_ = MainManagerImplPtr( new MainManagerImpl());
+	mainManagerImplPtr_ = IMainManagerImplPtr( new MainManagerImpl());
 }
 
 MainManager::~MainManager()
